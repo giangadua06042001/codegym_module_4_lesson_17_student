@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Student</title>
+</head>
+<body>
+<h1>Create new student </h1>
+<p>
+    <a href="/test/list">Go to list student</a>
+</p>
+<th:block th:if="${message}">
+   <p th:text="${message}">
+   </p>
+</th:block>
+<form th:object="${student}" th:action="@{/test/create}" method="post">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <label>
+                    <input th:field="*{name}" type="text">
+                </label>
+            </td>
+        </tr>
+         <tr>
+            <td>Number</td>
+            <td>
+                <label>
+                    <input th:field="*{number}" type="text">
+                </label>
+            </td>
+        </tr>
+         <tr>
+            <td>Address</td>
+            <td>
+                <label>
+                    <input th:field="*{address}" type="text">
+                </label>
+            </td>
+        </tr>
+         <tr>
+            <td>Email</td>
+            <td>
+                <label>
+                    <input th:field="*{email}" type="text">
+                </label>
+            </td>
+        </tr>
+         <tr>
+            <td>Mark</td>
+            <td>
+                <label>
+                    <input th:field="*{mark}" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="submit" value="Create">
+                </label>
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>

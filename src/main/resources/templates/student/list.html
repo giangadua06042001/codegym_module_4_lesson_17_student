@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List student</title>
+</head>
+<body>
+<h1>List student</h1>
+<p>
+    <a href="/test">Create new Student</a>
+</p>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Number</td>
+        <td>Address</td>
+        <td>Email</td>
+        <td>Mark</td>
+        <td>Delete</td>
+        <td>Edit</td>
+        <td>Views</td>
+    </tr>
+   <th:block th:each="student : ${list}">
+       <tr>
+           <td th:text="${student.id}"></td>
+           <td th:text="${student.name}"></td>
+           <td th:text="${student.number}"></td>
+           <td th:text="${student.address}"></td>
+           <td th:text="${student.email}"></td>
+           <td th:text="${student.mark}"></td>
+           <td> <a th:href="@{{id}/delete(id=${student.id})}">Delete</a></td>
+           <td> <a th:href="@{{id}/edit(id=${student.id})}">Edit</a></td>
+           <td> <a th:href="@{{id}/view(id=${student.id})}">View</a></td>
+
+       </tr>
+   </th:block>
+</table>
+<div>
+    <form  action="/test/search" method="get">
+        <label>
+            <input type="text" name="s">
+        </label>
+        <label>
+            <input type="submit" value="search">
+        </label>
+    </form>
+</div>
+<div>
+<form action="/test/sort">
+    <label>
+        <input type="submit" value="sort" name="sort">
+    </label>
+</form>
+</div>
+</body>
+</html>

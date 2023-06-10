@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table th:object="${student}">
+    <tr>
+        <td>Name</td>
+        <td th:text="${student.name}"></td>
+    </tr>
+      <tr>
+        <td>Number</td>
+        <td th:text="${student.number}"></td>
+    </tr>
+      <tr>
+        <td>Address</td>
+        <td th:text="${student.address}"></td>
+    </tr>
+      <tr>
+        <td>Email</td>
+        <td th:text="${student.email}"></td>
+    </tr>
+      <tr>
+        <td>Mark</td>
+        <td th:text="${student.email}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
